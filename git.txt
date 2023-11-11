@@ -1,0 +1,89 @@
+Creating a responsive webpage as described requires a combination of HTML and CSS. Below is a simplified example to get you started. Make sure to adjust colors, fonts, and other styling to match your preferences.
+
+1. Create the folder structure:
+
+
+module2-solution/
+|-- index.html
+|-- css/
+|   |-- styles.css
+
+
+2. Write the HTML (index.html):
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Responsive Page</title>
+</head>
+<body>
+    <header>
+        <h1>Page Heading</h1>
+    </header>
+
+    <section class="box chicken">
+        <div class="title">Chicken</div>
+        <p>Lorem ipsum...</p>
+    </section>
+
+    <section class="box beef">
+        <div class="title">Beef</div>
+        <p>Lorem ipsum...</p>
+    </section>
+
+    <section class="box sushi">
+        <div class="title">Sushi</div>
+        <p>Lorem ipsum...</p>
+    </section>
+</body>
+</html>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* Optional: Set your preferred font-family */
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+.box {
+    box-sizing: border-box;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 20px;
+}
+
+.title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #555; /* Unique color for each section title region */
+    color: white;
+    padding: 5px 10px;
+}
+
+/* Responsive Layout */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .box {
+        width: 48%;
+        float: left;
+    }
+
+    .sushi {
+        clear: both;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .box {
+        width: 100%;
+        float: none;
+    }
+}
